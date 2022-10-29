@@ -1,0 +1,3 @@
+[submodule "college"]
+	path = college
+	url = https://github.com/mclotos/college.git
