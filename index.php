@@ -9,11 +9,12 @@ spl_autoload_register(function ($class) {
 
 
 $student=new Student(
-  'ivan',
+  'Avan',
   'ivanov',
-  new DateTime(),
+  new DateTime('2020-01-01'),
   'boy',
-  "ISP 20-22", assignmentDate: new DateTime());
-echo ($student->getFullName());
-echo ($student->getGroup());
- ($student->getAssignmentDate());
+  "ISP 20-22",
+  new DateTime('2020-01-01'));
+$student->setMiddleName('ivanovich');
+$student->Expel(true,new DateTime(2020-01-01));
+echo($student->status());
