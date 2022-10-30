@@ -17,10 +17,11 @@ public function Expel(bool $status,DateTime $exp):void{
 $this->expelled=$status;
 $this->expDate=$exp;
 }
-public function status(){
+public function status():string{
     if ($this->expelled==false){
         return 'Студент числится в группе' . ' ' . $this->getGroup();
     }
 return 'Студент отчислен' . ' ' . $this->expDate->format('Y-m-d');
 }
+
 }
