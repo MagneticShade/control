@@ -29,3 +29,5 @@ $teacher=new Teacher(
 $teacher->setMiddleName('Nikitovich');
 $teacher->Expel(true,new DateTime(2004-01-01));
 echo($teacher->status());
+$group=new Group($student,$teacher,"abra", new DateTime('2020-01-01'));
+echo ($group->getStudent()->getFullName());
