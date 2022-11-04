@@ -15,9 +15,9 @@ $student=new Student(
   'boy',
   "ISP 20-22",
   new DateTime('2020-01-01'));
-$student->setMiddleName('ivanovich');
-$student->Expel(true,new DateTime(2020-01-01));
-echo($student->status());
+//$student->setMiddleName('ivanovich');
+//$student->Expel(true,new DateTime(2020-01-01));
+//echo($student->status());
 $teacher=new Teacher(
     'Nikita',
     'Nikitov',
@@ -26,8 +26,11 @@ $teacher=new Teacher(
     "ISP 20-22",
     "3 years",
     "PHP");
-$teacher->setMiddleName('Nikitovich');
-$teacher->Expel(true,new DateTime(2004-01-01));
-echo($teacher->status());
+//$teacher->setMiddleName('Nikitovich');
+//$teacher->Expel(true,new DateTime(2004-01-01));
+//echo($teacher->status());
 $group=new Group($student,$teacher,"abra", new DateTime('2020-01-01'));
-echo ($group->getStudent()->getFullName());
+$student->transfer("aadfa",new DateTime('2020-01-01'));
+$student->transfer("aadfaasdfas",new DateTime('2020-02-01'));
+echo($student->getTransfHistory());
+echo sizeof($student->transfer());
