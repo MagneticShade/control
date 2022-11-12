@@ -6,18 +6,6 @@ spl_autoload_register(function ($class) {
             explode('\\', str_replace('control', '', $class))
         ) . '.php';
 });
-
-
-$student=new Student(
-  'Avan',
-  'ivanov',
-  new DateTime('2020-01-01'),
-  'boy',
-  "ISP 20-22",
-  new DateTime('2020-01-01'));
-$student->setMiddleName('ivanovich');
-$student->Expel(true,new DateTime(2020-01-01));
-echo($student->status());
 $teacher=new Teacher(
     'Nikita',
     'Nikitov',
@@ -26,8 +14,19 @@ $teacher=new Teacher(
     "ISP 20-22",
     "3 years",
     "PHP");
+
+$group=new GroupT($teacher,'isp 20-22',new DateTime(2020-01-01));
+
+$student=new Student(
+  'Avan',
+  'ivanov',
+  new DateTime('2020-01-01'),
+  'boy',
+  $group,
+  new DateTime('2020-01-01'));
+$student->setMiddleName('ivanovich');
+$student->Expel(true,new DateTime(2020-01-01));
+print_r($student->getGroup());
+
 $teacher->setMiddleName('Nikitovich');
-$teacher->Expel(true,new DateTime(2004-01-01));
-echo($teacher->status());
-$group=new Group($student,$teacher,"abra", new DateTime('2020-01-01'));
-echo ($group->getStudent()->getFullName());
+

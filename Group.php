@@ -1,6 +1,6 @@
 <?php
 
-class Group
+class Group implements GroupInterface
 {
     private ?Student $student=null;
     private array $students=[];
