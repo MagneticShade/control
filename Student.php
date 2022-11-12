@@ -5,12 +5,12 @@ class Student extends \College\Entities\Human
     private ?DateTime $expDate=null;
 public function __construct(string $firstName, string $lastName, DateTime $birthDate, string $gender,private string $group,private DateTime $assignmentDate)
 {
-\College\Entities\Human::__construct($firstName,$lastName,$birthDate,$gender);
+parent::__construct($firstName,$lastName,$birthDate,$gender);
 }
 public function getGroup():string{
     return $this->group;
 }
-public function getAssignmentDate(){
+public function getAssignmentDate():DateTime{
     return $this->assignmentDate;
 }
 public function Expel(bool $status,DateTime $exp):void{

@@ -2,7 +2,9 @@
 
 class Group
 {
-public function __construct(private Student $student,private Teacher $teacher,private string $specialty,private DateTime $creation){
+    private ?Student $student=null;
+    private array $students=[];
+public function __construct(private Teacher $teacher,private string $specialty,private DateTime $creation){
 
 }
 
@@ -11,7 +13,12 @@ public function __construct(private Student $student,private Teacher $teacher,pr
         return $this->specialty;
     }
 
-    public function getStudent(): Student
+    public function setStudent(?Student $student): void
+    {
+        $this->student = $student;
+        array_push($this->students,$student);
+    }
+    public function getStudent(): ?Student
     {
         return $this->student;
     }
