@@ -16,6 +16,7 @@ $teacher=new Teacher(
     "PHP");
 
 $group=new GroupT($teacher,'isp 20-22',new DateTime(2020-01-01));
+$group2=new GroupT($teacher,'Gips 20-22',new DateTime(2019-01-01));
 
 $student=new Student(
   'Avan',
@@ -26,7 +27,9 @@ $student=new Student(
   new DateTime('2020-01-01'));
 $student->setMiddleName('ivanovich');
 $student->Expel(true,new DateTime(2020-01-01));
+$teacher->setMiddleName('Nikitovich');
 print_r($student->getGroup());
 
-$teacher->setMiddleName('Nikitovich');
+$student->transfer($group2,"abrams",new DateTime(2020-01-01));
+print_r($student->getGroup());
 

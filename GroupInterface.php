@@ -6,7 +6,9 @@ interface GroupInterface
 
     public function setStudent(?Student $student): void;
 
-    public function getStudent(): ?Student;
+    public function getStudent(Student $student): ?Student;
+
+    public function removeStudent(Student $student):void;
 
     public function getCreation(): DateTime;
 

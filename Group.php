@@ -18,7 +18,7 @@ public function __construct(private Teacher $teacher,private string $specialty,p
         $this->student = $student;
         array_push($this->students,$student);
     }
-    public function getStudent(): ?Student
+    public function getStudent(Student $student): ?Student
     {
         return $this->student;
     }
