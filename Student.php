@@ -2,7 +2,6 @@
 class Student extends \College\Entities\Human
 {
 
-    private \control\Student\Transfer $transfers;
     public function __construct(string $firstName, string $lastName, DateTime $birthDate, string $gender, private GroupInterface $group, private DateTime $assignmentDate)
     {
         parent::__construct($firstName, $lastName, $birthDate, $gender);
@@ -26,8 +25,5 @@ class Student extends \College\Entities\Human
     public function Expel(bool $status, DateTime $exp): void
     {
 
-    }
-    public function transfer (\GroupInterface $newGroup,string $reason, DateTime $transferDate){
-        $this->transfers->transfer($this,$newGroup, $reason, $transferDate);
     }
 }

@@ -10,7 +10,7 @@ $teacher=new Teacher(
     'Nikita',
     'Nikitov',
     new DateTime('2004-01-01'),
-    'boy',
+    'м',
     "ISP 20-22",
     "3 years",
     "PHP");
@@ -22,14 +22,35 @@ $student=new Student(
   'Avan',
   'ivanov',
   new DateTime('2020-01-01'),
-  'boy',
+  'м',
   $group,
   new DateTime('2020-01-01'));
 $student->setMiddleName('ivanovich');
 $student->Expel(true,new DateTime(2020-01-01));
 $teacher->setMiddleName('Nikitovich');
-print_r($student->getGroup());
 
-$student->transfer($group2,"abrams",new DateTime(2020-01-01));
-print_r($student->getGroup());
 
+
+ $connect= new Mysqli(username: 'root',hostname: '127.0.0.1',database: 'college');
+//    $connect->query(
+//        "insert into `teachers`(`fname`,`mname`,`lname`,`gender`,`birth_date`)
+//              values('{$teacher->getFirstName()}','{$teacher->getMiddleName()}','{$teacher->getLastName()}','{$teacher->getGender()}','{$teacher->getBirthDate()->format('Y-d-m')}');"
+//    );
+//$last_id = $connect->insert_id;
+//   $connect->query(
+//       "insert into `groups`(`name`,`curator_id`) values ('ИСП 20-22',{$last_id})");
+//
+// $connect->query("
+//    insert into `students` (`fname`, `mname`, `lname`, `gender`, `birth_date`, `group_id`)
+//    values ('{$student->getFirstName()}','{$student->getMiddleName()}','{$student->getLastName()}','{$student->getGender()}','{$student->getBirthDate()->format('Y-d-m')}','{$last_id}')");
+//
+
+ $result=$connect->query('select * from `students`;');
+ $students = [];
+ if ($result->num_rows>0){
+     while($row=$result->fetch_assoc()){
+         array_push($students, $row);
+     }
+ }
+
+ require 'index.html';

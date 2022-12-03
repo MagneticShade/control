@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <?php foreach($students as $student) {?>
+       <tr>
+           <td><?=$student['id']?></td>
+           <td><?=$student['fname']?></td>
+           <td><?=$student['mname']?></td>
+           <td><?=$student['lname']?></td>
+           <td><?=$student['birth_date']?></td>
+           <td><input type="checkbox"  <?=$student['is_headman'] ? 'checked' : ''?> disabled/>  </td>
+           <td><input id="del" type="button" value=" удалить"></td>
+       </tr>
+    <?php }?>
+    </tbody>
+    <thead>
+        <th>ID</th>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Пол</th>
+        <th>Дата рождения</th>
+        <th>Староста</th>
+    </thead>
+    <tfoot>
+        <tr>
+            <td><input id="add" type="button" value="добавить"></td>
+
+            <td>Всего <?=count($students);?> студентов</td>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>
